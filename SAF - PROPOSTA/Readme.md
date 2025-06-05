@@ -4,7 +4,7 @@
 **Objetivo**
 ------------
 
-Desenhar um modelo Arquitetural moderno, para ajudar na performaçe e resilência da aplicação SAF. Diminuir tempo com troubleshooting e facilitar no desenvolido e evoluções de novas integrações.
+Desenhar um modelo Arquitetural moderno, para ajudar na performaçe e resilência da aplicação Sistema. Diminuir tempo com troubleshooting e facilitar no desenvolido e evoluções de novas integrações.
 
 High-level design e Low Level Design
 ----------------
@@ -27,7 +27,7 @@ Stack tecnológico
 - Pub/Sub;
 -----------------------
 
-Proposta Arquitetura SAF
+Proposta Arquitetura Sistema
 
 ![Low Level Design](img/arqpro.png)
 
@@ -40,13 +40,13 @@ Proposta Arquitetura SAF
 5 - Configurar Ingress, routes, serviçes, secrets e conifgMaps 
 6 - Configurar novo CI/CD para novas aplicações
 6.1 - Validar se podemos utilizar a esteira pronta da DL
-7 - Testes de performace e acessos ao ambiente SAF
-8 - Configuração de monitoramento da aplicação do Sistema SAF
+7 - Testes de performace e acessos ao ambiente Sistema
+8 - Configuração de monitoramento da aplicação do Sistema Sistema
 
 
 ##### **Propostas Melhorias Banco de dados**
 
-A primeira proposta para mitigar problemas de lentidão no sistema SAF para emissão de relatório, seria a sequinte:
+A primeira proposta para mitigar problemas de lentidão no sistema Sistema para emissão de relatório, seria a sequinte:
 
 Duplicar a instância do banco de dados e utilizar de algumas ferramentas para sink da base dedados de produção para base de dados de relatório:
 
@@ -59,7 +59,7 @@ Idepedentemente de qual serviço de sink usaremos, o ideal seria que esse sink s
 
 Podemos utilizar também serviços de ELT como o Apache Nifi. Terá um custo de uma maquina linux de 8GB e 2vCPU. Nessa maquina Linux terá que ser instaldo o apache NIFI onde ele irá se connectar nas duas bases de dados e realizar o sink de forma automatica. Essa instalação e configuração do sink é relativamente tranquilo. Os processos para realizar essa intalação/configuração do Apache Nifi a equipe já possui.
 
-Com isso podemos realizar a configuração para que o SAF Report se connect no banco de dados de relatório, desafogando então a base de dados e produção
+Com isso podemos realizar a configuração para que o Sistema Report se connect no banco de dados de relatório, deSistemaogando então a base de dados e produção
 
 
 
@@ -87,13 +87,13 @@ Uma outra solução paleativa seria a construção de  uma tabela de consolidaç
 ![Low Level Design](img/Proposta3bd.png)
 
 
-##### **Problemas de lentidão no SAF**
+##### **Problemas de lentidão no Sistema**
 
-Há Alguns dias atrás tivemos relatos da área cliente que o sistema SAF aprensetava e apresneta uma certa lentidão. Por não termos nenhuma ferramenta para nos auxiliar com esses troubleshooting, sugiro de imediato a instalação/configuração do Jaeger. O Jaeger será importantíssimo para diagonisticar esses tipos de problemas já que ele irá tracear toda a aplicação e de forma web irá mostrar tempo de entrada e saida de todos os metodos da aplicação. Com isso iremos conseguir de forma mais facil a entender em que parte do nosso sitema está acontecendo alguma gargalo.
+Há Alguns dias atrás tivemos relatos da área cliente que o sistema Sistema aprensetava e apresneta uma certa lentidão. Por não termos nenhuma ferramenta para nos auxiliar com esses troubleshooting, sugiro de imediato a instalação/configuração do Jaeger. O Jaeger será importantíssimo para diagonisticar esses tipos de problemas já que ele irá tracear toda a aplicação e de forma web irá mostrar tempo de entrada e saida de todos os metodos da aplicação. Com isso iremos conseguir de forma mais facil a entender em que parte do nosso sitema está acontecendo alguma gargalo.
 
 Iremos precisar de uma maquina de 8GB na Azure para a instalação do Jaeger.
 
-Iremos procisar também adicionar uma lib no projeto do SAF e configurar para enviar os traces/spam para o servido do jaeger.
+Iremos procisar também adicionar uma lib no projeto do Sistema e configurar para enviar os traces/spam para o servido do jaeger.
 
 ![Low Level Design](img/jaeger.png)
 
