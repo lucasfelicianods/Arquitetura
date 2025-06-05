@@ -1,4 +1,4 @@
-**Arquitetura SAF-GLOBO**
+**Arquitetura SAF**
 =======
 
 **Objetivo**
