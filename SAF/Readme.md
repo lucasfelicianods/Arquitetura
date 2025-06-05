@@ -1,10 +1,10 @@
-**Arquitetura SAF**
+**Arquitetura Sistema**
 =======
 
 **Objetivo**
 ------------
 
-Desenhar um modelo Arquitetural moderno, para ajudar na performaçe e resilência da aplicação SAF. Diminuir tempo com troubleshooting e facilitar no desenvolido e evoluções de novas integrações.
+Desenhar um modelo Arquitetural moderno, para ajudar na performaçe e resilência da aplicação Sistema. Diminuir tempo com troubleshooting e facilitar no desenvolido e evoluções de novas integrações.
 
 High-level design e Low Level Design
 ----------------
@@ -17,7 +17,7 @@ implementação toda comunicação entre os microserviços são HTTPS e suportad
 
 Desenho arquitetural Kubernetes
 
-![Low Level Design](img/arqsafkubernetes.png)
+![Low Level Design](img/arqSistemakubernetes.png)
 
 
 Stack tecnológico
@@ -31,19 +31,19 @@ Stack tecnológico
 - Prometheus;
 - Pub/Sub;
 
-Exemplo Integração SAF - Entrada HTTP/RESTE
+Exemplo Integração Sistema - Entrada HTTP/RESTE
 
-![Integracao Rest](img/safentrada.png)
+![Integracao Rest](img/Sistemaentrada.png)
 
 
 
 Exemplo Integração Pub/Sub - Entrada Pub/Sub
 
-![Integracao Pub/Sub](img/safentradapubsub.png)
+![Integracao Pub/Sub](img/Sistemaentradapubsub.png)
 
 Exemplo Integração Envio de Requisição
 
-![Integracao Pub/Sub](img/safenviorequisicoes.png)
+![Integracao Pub/Sub](img/Sistemaenviorequisicoes.png)
 
 
 -----------------------
@@ -109,16 +109,16 @@ Outra coisa bastante legal do mundo kubernetes e se caso a subscrição do opens
   1.2. Realizar cálculo na calculadora de nuvem para dimensionar o custo computacional no modelo novo de arquitetura
 
 2.  Mapeamento do projeto atual. (Documentação AS IS)
-   2.1. Desenho arquitetural mostrando todas as entradas e saidas do ambiente SAF
+   2.1. Desenho arquitetural mostrando todas as entradas e saidas do ambiente Sistema
    2.2. Mapeamento de todos os processos
    2.3. Mapeamento de Inbound e OutBound  do sistema.
-   2.4. Estudo de adequação do sistema saf para o novo Modelo.
+   2.4. Estudo de adequação do sistema Sistema para o novo Modelo.
 
-3. Estudo de Infraestrutura de acesso entrada e saida (Openshift) caso o sistema saf vá para o openshift.   
+3. Estudo de Infraestrutura de acesso entrada e saida (Openshift) caso o sistema Sistema vá para o openshift.   
 
 4. Mapear todo o flow de CI/CD para a nova estrutura, entregando o build da pipeline direto no ACR do Openshift.
 
-5. Mapear quais serviços atuais do sistema SAF, já podem ser migrados para Micro Serviços aproveitando a estrutura nova.
+5. Mapear quais serviços atuais do sistema Sistema, já podem ser migrados para Micro Serviços aproveitando a estrutura nova.
 
 6. Adequar a arquitetura nova depois dos estudos/levantamentos feitos do sistema atual.
 
@@ -126,13 +126,13 @@ Outra coisa bastante legal do mundo kubernetes e se caso a subscrição do opens
 
 8. Configuração de serviços do openshift(networking, monitoramento, service mesh)
 
-9. Criação de objetos para o sistema saf(Deployment, configmap, secrets, routes, services)
+9. Criação de objetos para o sistema Sistema(Deployment, configmap, secrets, routes, services)
 
 10. Configuração de flow CI/CD para o openshift.
 
-11. Mapear em fases a deploymento do sistema saf no ambiente openshift.
+11. Mapear em fases a deploymento do sistema Sistema no ambiente openshift.
 
-12. Testes do sistema saf dentro do ambiente openshift.
+12. Testes do sistema Sistema dentro do ambiente openshift.
 
 
 SQL SERVER, PODE não ser um single point failure. (verificar)
